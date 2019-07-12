@@ -34,21 +34,10 @@ public class Klass {
         return teachers;
     }
 
-    public void setTeachers(ArrayList<Teacher> teachers) {
-        this.teachers = teachers;
-    }
-
-    public ArrayList<Student> getStudents() {
-        return students;
-    }
-
-    public void setStudents(ArrayList<Student> students) {
-        this.students = students;
-    }
 
     public void assignLeader(Student student) {
-        Boolean flag = student.getKlass() == null || student.getKlass().getNumber() != this.number;
-        if (flag){
+        Boolean isInClass = student.getKlass() == null || student.getKlass().getNumber() != this.number;
+        if (isInClass) {
             System.out.print("It is not one of us.\n");
         } else {
             this.leader = student;
@@ -62,12 +51,11 @@ public class Klass {
         student.setKlass(this);
         students.add(student);
         this.teachers.forEach(curTeacher ->
-            System.out.print(String.format("I am %s. I know %s has joined Class %s.\n", curTeacher.getName(), student.getName(), number))
+                System.out.print(String.format("I am %s. I know %s has joined Class %s.\n", curTeacher.getName(), student.getName(), number))
         );
     }
 
-    public boolean isInClass(Student student){
-        Boolean flag = student.getKlass().number == this.number ? true : false;
-        return flag;
+    public boolean isInClass(Student student) {
+        return student.getKlass().number == this.number;
     }
 }

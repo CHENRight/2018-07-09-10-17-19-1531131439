@@ -1,7 +1,5 @@
 package practice11;
 
-
-
 public class Person {
     private String name;
     private int age;
@@ -34,15 +32,15 @@ public class Person {
         this.age = age;
     }
 
-    public String introduce(){
+    public String introduce() {
         return "My name is " + name + ". I am " + age + " years old.";
     }
 
     @Override
     public boolean equals(Object obj) {
-        if(obj instanceof Person){
-            Person temp = (Person)(obj);
-            return temp.id == this.id && temp.age == this.age&& temp.name.equals(this.name);
+        if (obj instanceof Person) {
+            Person temp = (Person) (obj);
+            return temp.id == this.id && temp.age == this.age && temp.name.equals(this.name);
         }
         return false;
     }

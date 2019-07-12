@@ -13,10 +13,6 @@ public class Klass {
         return number;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
-    }
-
     public String getDisplayName() {
         return String.format("Class %d", this.getNumber());
     }
@@ -31,7 +27,7 @@ public class Klass {
 
     public void assignLeader(Student student) {
         Boolean flag = student.getKlass() == null || student.getKlass().getNumber() != this.number;
-        if (flag){
+        if (flag) {
             System.out.print("It is not one of us.\n");
         } else {
             this.leader = student;
@@ -42,8 +38,7 @@ public class Klass {
         student.setKlass(this);
     }
 
-    public boolean isInClass(Student student){
-        Boolean flag = student.getKlass().number == this.number ? true : false;
-        return flag;
+    public boolean isInClass(Student student) {
+        return student.getKlass().number == this.number;
     }
 }
