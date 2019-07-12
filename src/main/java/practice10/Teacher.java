@@ -1,7 +1,6 @@
 package practice10;
 
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class Teacher extends Person{
@@ -35,7 +34,7 @@ public class Teacher extends Person{
         if(classes != null && classes.size() > 0){
             teachCondition = "Class";
             for(int i = 0;i < classes.size();i++){
-                teachCondition += (" " + classes.get(i).getNumber() + "");
+                teachCondition += (" " + classes.get(i).getNumber());
                 if(i != classes.size() - 1){
                     teachCondition += ",";
                 }
@@ -50,7 +49,7 @@ public class Teacher extends Person{
     public String introduceWith(Student student){
         String result;
 
-        Boolean flag = classes != null && classes.size() > 0 && isTeaching(student);
+        boolean flag = classes != null && classes.size() > 0 && isTeaching(student);
         if(flag){
             result = String.format(" I teach %s.", student.getName());
         }else {

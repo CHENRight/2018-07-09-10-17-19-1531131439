@@ -37,7 +37,7 @@ public class Teacher extends Person {
         if(classes != null && classes.size() > 0){
             teachCondition = "Class";
             for(int i = 0;i < classes.size();i++){
-                teachCondition += (" " + classes.get(i).getNumber() + "");
+                teachCondition += (" " + classes.get(i).getNumber());
                 if(i != classes.size() - 1){
                     teachCondition += ",";
                 }
